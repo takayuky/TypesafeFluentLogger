@@ -9,7 +9,7 @@ final case class TypesafeFluentLogger(underlying: FluentLogger) {
   }
 }
 
-object StrictFluentLoggerFactory {
+object TypesafeFluentLoggerFactory {
   def getLogger(tag: String, host: String, port: Int): TypesafeFluentLogger =
     TypesafeFluentLogger(FluentLoggerFactory.getLogger(tag, host, port))
 }
