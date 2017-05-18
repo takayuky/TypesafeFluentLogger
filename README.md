@@ -2,8 +2,7 @@
 
 Fluent Logger with type safety and extensibility. You can no longer pass uninteded values to loggers.
 
-
-### What's wrong with fluent-logger-scala
+### What's wrong with [fluent-logger-scala](https://github.com/fluent/fluent-logger-scala)
 
 ```Scala
 case class ShouldNotBePassedToLoggers(value: String)
