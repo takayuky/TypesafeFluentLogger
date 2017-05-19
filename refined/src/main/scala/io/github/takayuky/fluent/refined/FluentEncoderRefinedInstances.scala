@@ -6,6 +6,6 @@ import io.github.takayuky.fluent.{FluentAcceptable, FluentEncoder}
 trait FluentEncoderRefinedInstances {
   implicit def fluentEncoderForR[A, P](implicit A: FluentEncoder[A]): FluentEncoder[Refined[A, P]] =
     new FluentEncoder[Refined[A, P]] {
-      override def encode(ra: Refined[A, P]): FluentAcceptable = A.encode(ra.value)
+      override def encode[B <: Refined[A, P]](rap: B): FluentAcceptable = A.encode(rap.value)
     }
 }

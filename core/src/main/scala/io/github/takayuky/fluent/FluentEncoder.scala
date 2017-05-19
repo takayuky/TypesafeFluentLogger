@@ -4,13 +4,13 @@ package io.github.takayuky.fluent
  * A type class to provide a 'FluentAcceptable' representation to write logs with FluentLogger.
  * Inspired by 'Show' type class in cats.
  */
-trait FluentEncoder[A] {
-  def encode(v: A): FluentAcceptable
+trait FluentEncoder[-A] {
+  def encode[B <: A](v: B): FluentAcceptable
 }
 
 object FluentEncoder {
-  def id[A]: FluentEncoder[A] =  new FluentEncoder[A] {
-    override def encode(v: A): FluentAcceptable = ConcreteFluentAcceptable(v)
+  def id[A]: FluentEncoder[A] = new FluentEncoder[A] {
+    override def encode[B <: A](v: B): FluentAcceptable = ConcreteFluentAcceptable(v)
   }
 }
 

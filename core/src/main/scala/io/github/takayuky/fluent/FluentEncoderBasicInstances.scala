@@ -12,6 +12,7 @@ trait FluentEncoderBasicInstances {
 
   implicit def fluentEncoderForOption[A](implicit A: FluentEncoder[A]): FluentEncoder[Option[A]] =
     new FluentEncoder[Option[A]] {
-      override def encode(oa: Option[A]): FluentAcceptable = ConcreteFluentAcceptable(oa.map(A.encode(_).v))
+      override def encode[B <: Option[A]](oa: B): FluentAcceptable =
+        ConcreteFluentAcceptable(oa.map(A.encode(_).v))
     }
 }
