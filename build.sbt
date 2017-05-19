@@ -43,3 +43,11 @@ lazy val refinedLibraryDependencies = Seq(
     "eu.timepit" %% "refined" % "0.8.1"
   )
 )
+
+
+/** examples **/
+
+lazy val examples = project.in(file("examples"))
+  .dependsOn(core % "compile->compile; test->test")
+  .dependsOn(refined % "compile->compile; test->test")
+  .settings(commonSettings)
