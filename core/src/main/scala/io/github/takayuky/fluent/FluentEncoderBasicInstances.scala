@@ -11,8 +11,7 @@ trait FluentEncoderBasicInstances {
   implicit val fluentEncoderForBigDecimal: FluentEncoder[BigDecimal] = FluentEncoder.id
 
   implicit def fluentEncoderForOption[A](implicit A: FluentEncoder[A]): FluentEncoder[Option[A]] =
-    new FluentEncoder[Option[A]] {
-      override def encode[B <: Option[A]](oa: B): FluentAcceptable =
-        ConcreteFluentAcceptable(oa.map(A.encode(_).v))
+    FluentEncoder.create { oa =>
+      ConcreteFluentAcceptable(oa.map(A.encode(_).v))
     }
 }

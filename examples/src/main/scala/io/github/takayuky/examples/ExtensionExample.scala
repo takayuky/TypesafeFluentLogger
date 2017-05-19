@@ -20,9 +20,7 @@ object ExtensionExample {
   }
 
   private[this] def user2Int(logger: TypesafeFluentLogger, user: User): Unit = {
-    implicit val fluentEncoderForUser: FluentEncoder[User] = new FluentEncoder[User] {
-      override def encode(u: User): FluentAcceptable = u.id
-    }
+    implicit val fluentEncoderForUser: FluentEncoder[User] = FluentEncoder.create(_.id)
 
     logger.log("success", Map(
       "User" -> user
@@ -31,9 +29,7 @@ object ExtensionExample {
   }
 
   private[this] def user2Str(logger: TypesafeFluentLogger, user: User): Unit = {
-    implicit val fluentEncoderForUser: FluentEncoder[User] = new FluentEncoder[User] {
-      override def encode(u: User): FluentAcceptable = u.name
-    }
+    implicit val fluentEncoderForUser: FluentEncoder[User] = FluentEncoder.create(_.name)
 
     logger.log("success", Map(
       "User" -> user
@@ -42,8 +38,8 @@ object ExtensionExample {
   }
 
   private[this] def user2Object(logger: TypesafeFluentLogger, user: User): Unit = {
-    implicit val fluentEncoderForUser: FluentEncoder[User] = new FluentEncoder[User] {
-      override def encode(u: User): FluentAcceptable = ConcreteFluentAcceptable(u) // pass User object itself to the logger
+    implicit val fluentEncoderForUser: FluentEncoder[User] = FluentEncoder.create { u =>
+      ConcreteFluentAcceptable(u) // pass User object itself to the logger
     }
 
     logger.log("success", Map(
