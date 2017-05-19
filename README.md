@@ -1,5 +1,7 @@
 ## TypesafeFluentLogger
 
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 Fluent Logger with type safety and extensibility. You can no longer pass uninteded values to loggers.
 
 ### What's wrong with [fluent-logger-scala](https://github.com/fluent/fluent-logger-scala)
