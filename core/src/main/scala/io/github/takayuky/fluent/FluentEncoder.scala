@@ -9,9 +9,11 @@ trait FluentEncoder[-A] {
 }
 
 object FluentEncoder {
-  def id[A]: FluentEncoder[A] = new FluentEncoder[A] {
-    override def encode[B <: A](v: B): FluentAcceptable = ConcreteFluentAcceptable(v)
+  def create[A](f: A => FluentAcceptable): FluentEncoder[A] = new FluentEncoder[A] {
+    override def encode[B <: A](v: B): FluentAcceptable = f(v)
   }
+
+  def id[A]: FluentEncoder[A] = create(ConcreteFluentAcceptable.apply)
 }
 
 trait ToFluentAcceptable {
