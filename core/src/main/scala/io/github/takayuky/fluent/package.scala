@@ -2,4 +2,6 @@ package io.github.takayuky
 
 package object fluent
   extends ToFluentAcceptable
-    with FluentEncoderBasicInstances
+    with FluentEncoderBasicInstances {
+  object list extends FluentEncoderListInstances
+}
