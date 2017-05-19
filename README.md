@@ -29,10 +29,10 @@ logger.log("success", Map(
   "Long" -> 1L,
   "Double" -> 1d,
   "Float" -> 1f,
-  "String" -> "hello"
+  "String" -> "hello",
   "BigInt" -> BigInt(1),
   "BigDecimal" -> BigDecimal(1),
-  "Option" -> Some(1)
+  "Option" -> Option(1)
 ), 0L)
 
 
