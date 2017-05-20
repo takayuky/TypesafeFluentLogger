@@ -25,7 +25,7 @@ object RefinedExample {
       "Int" -> int,
       "Double" -> double,
       "String" -> string,
-      "Option" -> Option(int)
+      "Option" -> Some(int)
     ), 0L)
   }
 }

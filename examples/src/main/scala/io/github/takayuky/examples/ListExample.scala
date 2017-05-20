@@ -13,7 +13,7 @@ object ListExample {
 
     logger.log("success", Map(
       "List" -> List(1,2,3),
-      "Option" -> Option(List("hello"))
+      "Option" -> Some(List("hello"))
     ), 0L)
   }
 }
