@@ -1,6 +1,7 @@
 package io.github.takayuky.examples
 
 import io.github.takayuky.fluent._
+import io.github.takayuky.fluent.basic._
 
 object BasicExample {
   def main(args: Array[String]): Unit = {

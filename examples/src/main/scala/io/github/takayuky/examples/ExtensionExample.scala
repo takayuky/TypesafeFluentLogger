@@ -1,6 +1,7 @@
 package io.github.takayuky.examples
 
 import io.github.takayuky.fluent._
+import io.github.takayuky.fluent.basic._
 
 object ExtensionExample {
   private[this] final case class User(id: Int, name: String)

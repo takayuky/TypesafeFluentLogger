@@ -6,6 +6,7 @@ import eu.timepit.refined.collection.NonEmpty
 import eu.timepit.refined.numeric._
 import eu.timepit.refined.numeric.Interval.Closed
 import io.github.takayuky.fluent._
+import io.github.takayuky.fluent.basic._
 import io.github.takayuky.fluent.refined._
 import shapeless.Nat._
 
