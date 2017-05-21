@@ -19,6 +19,7 @@ logger.log("log", Map("danger" -> shouldNotBePassedToLoggers)) // You could pass
 
 ```Scala
 import io.github.takayuky.fluent._
+import io.github.takayuky.fluent.basic._
 
 val logger: TypesafeFluentLogger = TypesafeFluentLoggerFactory(tag, host, port)
 
