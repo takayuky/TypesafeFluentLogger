@@ -33,7 +33,7 @@ logger.log("success", Map(
   "String" -> "hello",
   "BigInt" -> BigInt(1),
   "BigDecimal" -> BigDecimal(1),
-  "Option" -> Option(1)
+  "Option" -> Some(1)
 ), 0L)
 
 
