@@ -1,6 +1,7 @@
 package io.github.takayuky.fluent
 
 import org.fluentd.logger.scala.{FluentLogger, FluentLoggerFactory}
+import scala.collection.Map
 
 final case class TypesafeFluentLogger(underlying: FluentLogger) extends AnyVal {
   def log(label: String, data: Map[String, FluentAcceptable], timestamp: Long): Unit = {
