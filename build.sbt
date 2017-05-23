@@ -13,7 +13,7 @@ lazy val core = project.in(file("core"))
   .settings(commonSettings)
   .settings(coreSettings)
 
-lazy val coreSettings = coreLibraryDependencies ++ Seq(
+lazy val coreSettings = coreLibraryDependencies ++ coreTestingLibraryDependencies ++ Seq(
   name := "TypesafeFluentLogger Core",
   moduleName := "typesafe-fluent-logger-core"
 )
@@ -21,6 +21,13 @@ lazy val coreSettings = coreLibraryDependencies ++ Seq(
 lazy val coreLibraryDependencies = Seq(
   libraryDependencies ++= Seq(
     "org.fluentd" %% "fluent-logger-scala"  % "0.7.0"
+  )
+)
+
+lazy val coreTestingLibraryDependencies = Seq(
+  libraryDependencies ++= Seq(
+    "org.scalatest" %% "scalatest"                   % "3.0.1"  % "test",
+    "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0"  % "test"
   )
 )
 
