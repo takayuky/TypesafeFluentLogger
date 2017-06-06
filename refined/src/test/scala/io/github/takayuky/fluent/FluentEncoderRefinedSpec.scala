@@ -13,7 +13,7 @@ import org.scalatest.FlatSpec
 import scala.collection.Map
 import shapeless.Nat.{_0, _1}
 
-class FluentEncoderRefined extends FlatSpec with MockFactory {
+class FluentEncoderRefinedSpec extends FlatSpec with MockFactory {
 
   class Setup {
     val underlyingMock = mock[FluentLogger]

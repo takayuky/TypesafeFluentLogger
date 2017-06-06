@@ -39,9 +39,7 @@ object ExtensionExample {
   }
 
   private[this] def user2Object(logger: TypesafeFluentLogger, user: User): Unit = {
-    implicit val fluentEncoderForUser: FluentEncoder[User] = FluentEncoder.create { u =>
-      ConcreteFluentAcceptable(u) // pass User object itself to the logger
-    }
+    implicit val fluentEncoderForUser: FluentEncoder[User] = FluentEncoder.id
 
     logger.log("success", Map(
       "User" -> user

@@ -14,6 +14,8 @@ object FluentEncoder {
   }
 
   def id[A]: FluentEncoder[A] = create(ConcreteFluentAcceptable.apply)
+
+  def any[A](f: A => Any): FluentEncoder[A] = create(f andThen ConcreteFluentAcceptable.apply)
 }
 
 trait ToFluentAcceptable {

@@ -6,7 +6,7 @@ import org.scalamock.scalatest.MockFactory
 import org.scalatest.FlatSpec
 import scala.collection.Map
 
-class FluentEncoderExtension extends FlatSpec with MockFactory {
+class FluentEncoderExtensionSpec extends FlatSpec with MockFactory {
   final case class User(id: Int, name: String)
   final case class Country(code: String, name: String)
 
@@ -22,7 +22,7 @@ class FluentEncoderExtension extends FlatSpec with MockFactory {
 
   it should "correctly encode custom instances" in new Setup {
     implicit val fluentEncoderForUser: FluentEncoder[User] = FluentEncoder.create(_.name)
-    implicit val fluentEncoderForCountry: FluentEncoder[Country] = FluentEncoder.create(ConcreteFluentAcceptable(_))
+    implicit val fluentEncoderForCountry: FluentEncoder[Country] = FluentEncoder.id
 
     val user = User(1, "takayuky")
     val japan = Country("JP", "Japan")

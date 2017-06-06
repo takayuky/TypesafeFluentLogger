@@ -7,7 +7,7 @@ import org.scalamock.scalatest.MockFactory
 import org.scalatest.FlatSpec
 import scala.collection.Map
 
-class FluentEncoderList extends FlatSpec with MockFactory {
+class FluentEncoderListSpec extends FlatSpec with MockFactory {
 
   class Setup {
     val underlyingMock = mock[FluentLogger]
